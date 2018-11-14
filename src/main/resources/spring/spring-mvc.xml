@@ -62,8 +62,8 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <!--拼接路径信息  如果放在web-inf中  需要添加/WEB-INF-->
-        <property name="prefix" value=""/>
-        <property name="suffix" value=".html"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 

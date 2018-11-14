@@ -8,7 +8,7 @@
     <import resource="spring-properties.xml"/>
     <!-- springmvc配置 -->
     <import resource="spring-mvc.xml"/>
-    <!--定时任务配置-->
+    <!--定时及异步任务配置-->
     <import resource="spring-task.xml"/>
     <!-- redis相关配置 -->
     <!-- 数据源与mybatis相关配置 -->

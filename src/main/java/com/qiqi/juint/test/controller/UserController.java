@@ -21,6 +21,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping(value = "jsp1",method = RequestMethod.GET)
+    public String getJsp( ){
+        return "test";
+    }
+
+
     @RequestMapping(value = "getUser",method = RequestMethod.GET)
     @ResponseBody
     public List<UserVO> getUserInfo(@RequestParam Integer age){

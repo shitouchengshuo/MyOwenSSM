@@ -16,4 +16,8 @@ public interface UserMapper {
     List<UserVO> getUserInfo(@Param("age") Integer age);
 
     void inserUser(@Param("user") User user);
+
+    boolean exist(@Param("age") Integer age);
+
+    int getUserNumbers(@Param("age") Integer age);
 }

@@ -38,9 +38,19 @@ public class UserServiceImpl implements UserService {
         userMapper.inserUser(user);
     }
 
-//    @Test
-//    public void test(){
-//        List<UserVO> list = userMapper.getUserInfo(12);
-//        System.out.println(list);
-//    }
+    @Test
+    public void test(){
+
+        boolean exist = userMapper.exist(12);
+        System.out.println("exist:  "+exist);
+
+        int userNumbers = userMapper.getUserNumbers(12);
+        System.out.println("userNumbers: "+userNumbers);
+
+        List<UserVO> list = userMapper.getUserInfo(12);
+        list.forEach(user-> System.out.println(user));
+
+        boolean existAge100 = userMapper.exist(100);
+        System.out.println("existAge100:  "+existAge100);
+    }
 }
