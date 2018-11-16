@@ -31,14 +31,21 @@
       <version>7.0</version>
     </dependency>
 
+    <!-- guava -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
+    </dependency>
+
+    <!--引入junit-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12-beta-3</version>
     </dependency>
 
-
-
+    <!--引入servlet-->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -62,12 +69,6 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.2.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>19.0</version>
     </dependency>
 
     <!-- 日志 -->
@@ -129,6 +130,13 @@
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
       <version>0.9.5.2</version>
+    </dependency>
+
+    <!--引入reids-->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.9.0</version>
     </dependency>
 
     <!-- MyBatis -->
@@ -195,7 +203,6 @@
       <scope>provided</scope>
     </dependency>
 
-
     <!--引入文件上传-->
     <dependency>
       <groupId>commons-fileupload</groupId>
@@ -207,13 +214,6 @@
           <groupId>commons-io</groupId>
         </exclusion>
       </exclusions>
-    </dependency>
-
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
     </dependency>
 
   </dependencies>
@@ -231,18 +231,6 @@
             <debug>true</debug>
             <fork>true</fork>
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
         </plugin>
       </plugins>
 
