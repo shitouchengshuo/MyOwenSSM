@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping( "/myRedis" )
 public class RedisController {
 
-    @Autowired
-    private RedisService redisService;
-
-    @RequestMapping(value = "tset",method = RequestMethod.GET)
-    public String test( ){
-        redisService.testRedis();
-        return "test";
-    }
+//    @Autowired
+//    private RedisService redisService;
+//
+//    @RequestMapping(value = "tset",method = RequestMethod.GET)
+//    public String test( ){
+//        redisService.testRedis();
+//        return "test";
+//    }
 }

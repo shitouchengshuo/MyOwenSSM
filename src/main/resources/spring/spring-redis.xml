@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <description>redis cluster configuation</description>
-
+    <!---->
     <bean id="genericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
         <!--连接池中最大空闲连接数, 默认8个-->
         <property name="maxIdle" value="${redis.pool.maxIdle}"/>
@@ -16,7 +16,7 @@
         <property name="jmxEnabled" value="${redis.pool.jmxEnabled}"/>
         <!--当连接池资源耗尽时，调用者最大阻塞的时间，超时将跑出异常。单位，毫秒数;默认为-1.表示永不超时-->
         <property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
-        <!--连接空闲的最小时间，达到此值后空闲连接将可能会被移除。负值(-1)表示不移除-->
+        <!--多长时间后回收空闲连接。负值(-1)表示不移除-->
         <property name="minEvictableIdleTimeMillis" value="${redis.pool.minEvictableIdleTimeMillis}"/>
         <!--对于“空闲链接”检测线程而言，每次检测的链接资源的个数。默认为3-->
         <property name="numTestsPerEvictionRun" value="${redis.pool.numTestsPerEvictionRun}"/>
@@ -30,6 +30,7 @@
         <!--连接耗尽时是否阻塞, false报异常,true阻塞直到超时, 默认true-->
         <property name="blockWhenExhausted" value="${redis.pool.blockWhenExhausted}"/>
     </bean>
+
 
     <bean id="jedisCluster" class="redis.clients.jedis.JedisCluster" destroy-method="close">
         <constructor-arg>
@@ -48,12 +49,15 @@
                 </bean>
             </set>
         </constructor-arg>
+
         <!--redis的连接超时时间-->
-        <constructor-arg value="${redis.connectionTimeout}"/>
+        <constructor-arg name="connectionTimeout" value="${redis.connectionTimeout}"/>
+
         <!--redis获取数据超时时间-->
-        <constructor-arg value="${redis.soTimeout}"/>
+        <constructor-arg name="soTimeout" value="${redis.soTimeout}"/>
+
         <!--redis出现异常最大重试次数-->
-        <constructor-arg value="${redis.maxAttempts}"/>
+        <constructor-arg name="maxAttempts" value="${redis.maxAttempts}"/>
         <constructor-arg ref="genericObjectPoolConfig"/>
     </bean>
 

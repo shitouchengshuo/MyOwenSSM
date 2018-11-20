@@ -11,7 +11,7 @@
     <!--定时及异步任务配置-->
     <import resource="spring-task.xml"/>
     <!-- redis相关配置 -->
-    <import resource="spring-redis.xml"/>
+    <import resource="spring-redis-single.xml"/>
     <!-- 数据源与mybatis相关配置 -->
     <import resource="spring-mybatis.xml"/>
 </beans>

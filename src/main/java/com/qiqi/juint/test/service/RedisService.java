@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface RedisService {
 
-    void testRedis();
+//    void testRedis();
 }
