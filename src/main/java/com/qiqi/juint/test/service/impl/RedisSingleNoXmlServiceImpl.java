@@ -46,15 +46,15 @@ public class RedisSingleNoXmlServiceImpl {
     @Test
     public void testJedisPool() throws Exception {
 
-    // 第二步：从JedisPool中获得Jedis对象。
-    Jedis jedis = jedisPool.getResource();
-    // 第三步：使用Jedis操作redis服务器。
-    jedis.set("a", "1");
-    String result = jedis.get("a");
-	System.out.println(result);
-    // 第四步：操作完毕后关闭jedis对象，连接池回收资源。
-	jedis.close();
-    // 第五步：关闭JedisPool对象。
-	jedisPool.close();
+        // 第二步：从JedisPool中获得Jedis对象。
+        Jedis jedis = jedisPool.getResource();
+        // 第三步：使用Jedis操作redis服务器。
+        jedis.set("a", "1");
+        String result = jedis.get("a");
+        System.out.println(result);
+        // 第四步：操作完毕后关闭jedis对象，连接池回收资源。
+        jedis.close();
+        // 第五步：关闭JedisPool对象。
+        jedisPool.close();
     }
 }
