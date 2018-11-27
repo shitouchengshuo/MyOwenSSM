@@ -45,7 +45,7 @@ public class RedisSingleNoXmlServiceImpl {
 
     @Test
     public void testJedisPool() throws Exception {
-
+        logger.warn("++++++++++++++++++");
         // 第二步：从JedisPool中获得Jedis对象。
         Jedis jedis = jedisPool.getResource();
         // 第三步：使用Jedis操作redis服务器。
