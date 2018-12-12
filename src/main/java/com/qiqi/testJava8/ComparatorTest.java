@@ -1,6 +1,7 @@
 package com.qiqi.testJava8;
 
 import com.google.common.collect.Lists;
+import com.qiqi.testJava8.model.User;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.Arrays;

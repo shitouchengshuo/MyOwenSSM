@@ -125,7 +125,14 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 数据库连接池 -->
+    <!-- druid连接池-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.9</version>
+    </dependency>
+
+    <!-- c3p0连接池 弃用-->
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>

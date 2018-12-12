@@ -1,7 +1,7 @@
-package com.qiqi.juint.test.dao;
+package com.qiqi.juint.dao;
 
-import com.qiqi.juint.test.model.User;
-import com.qiqi.juint.test.model.vo.UserVO;
+import com.qiqi.juint.model.User;
+import com.qiqi.juint.model.vo.UserVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

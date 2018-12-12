@@ -1,4 +1,4 @@
-package com.qiqi.juint.test.model.vo;
+package com.qiqi.juint.model.vo;
 
 import lombok.Data;
 

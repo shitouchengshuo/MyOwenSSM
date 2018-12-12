@@ -24,7 +24,7 @@
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven conversion-service="conversionService"/>
     <!-- 第一步:  创建自定义日期转换规则 -->
-    <bean id="dateConvert" class="com.qiqi.juint.test.util.DateConvert"/>
+    <bean id="dateConvert" class="com.qiqi.juint.util.DateConvert"/>
     <!-- 第二步： 创建convertion-Service ，并注入dateConvert-->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">

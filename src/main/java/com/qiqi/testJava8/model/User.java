@@ -1,8 +1,6 @@
-package com.qiqi.testJava8;
+package com.qiqi.testJava8.model;
 
 import lombok.Data;
-
-import java.io.Serializable;
 
 /**
  * Created by ZhaoQiqi on 2018/11/9.

@@ -1,13 +1,13 @@
-package com.qiqi.juint.test.controller;
+package com.qiqi.juint.controller;
 
-import com.qiqi.juint.test.model.User;
+import com.qiqi.juint.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping ( "/myTest" )
-public class MyController {
+public class SayHelloController {
 
     @RequestMapping("sayHello1")
     public void sayHello1(){

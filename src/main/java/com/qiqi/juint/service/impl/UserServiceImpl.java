@@ -1,9 +1,9 @@
-package com.qiqi.juint.test.service.impl;
+package com.qiqi.juint.service.impl;
 
-import com.qiqi.juint.test.dao.UserMapper;
-import com.qiqi.juint.test.model.User;
-import com.qiqi.juint.test.model.vo.UserVO;
-import com.qiqi.juint.test.service.UserService;
+import com.qiqi.juint.dao.UserMapper;
+import com.qiqi.juint.model.User;
+import com.qiqi.juint.model.vo.UserVO;
+import com.qiqi.juint.service.UserService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
     public List<UserVO> getUserInfo(Integer age) {
 
-        logger.info("调用方法getUserInfo(Integer age)");
+        logger.info("+++++++++调用方法getUserInfo(Integer age)+++++++++++++");
         return userMapper.getUserInfo(age);
     }
 
@@ -42,6 +42,7 @@ public class UserServiceImpl implements UserService {
     public void test(){
 
         boolean exist = userMapper.exist(12);
+        logger.error("+++++++++调用方法userMapper.exist+++++++++++++");
         System.out.println("exist:  "+exist);
 
         int userNumbers = userMapper.getUserNumbers(12);
@@ -52,5 +53,14 @@ public class UserServiceImpl implements UserService {
 
         boolean existAge100 = userMapper.exist(100);
         System.out.println("existAge100:  "+existAge100);
+    }
+
+    public static void main(String[] args) {
+        logger.error("+++++++++调用方法userMapper.exist+++++++++++++");
+        System.out.println("exist:  ");
+
+        System.out.println("userNumbers: ");
+
+
     }
 }

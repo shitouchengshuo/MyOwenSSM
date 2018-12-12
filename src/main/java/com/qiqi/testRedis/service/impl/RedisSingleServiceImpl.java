@@ -1,7 +1,7 @@
-package com.qiqi.juint.test.service.impl;
+package com.qiqi.testRedis.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.qiqi.testJava8.User;
+import com.qiqi.testJava8.model.User;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;

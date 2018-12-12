@@ -1,13 +1,12 @@
-package com.qiqi.juint.test.controller;
+package com.qiqi.juint.controller;
 
-import com.qiqi.juint.test.model.User;
-import com.qiqi.juint.test.model.vo.UserVO;
-import com.qiqi.juint.test.service.UserService;
+import com.qiqi.juint.model.User;
+import com.qiqi.juint.model.vo.UserVO;
+import com.qiqi.juint.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -25,7 +24,6 @@ public class UserController {
     public String getJsp( ){
         return "test";
     }
-
 
     @RequestMapping(value = "getUser",method = RequestMethod.GET)
     @ResponseBody

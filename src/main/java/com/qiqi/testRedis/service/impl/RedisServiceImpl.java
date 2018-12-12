@@ -1,19 +1,11 @@
-package com.qiqi.juint.test.service.impl;
+package com.qiqi.testRedis.service.impl;
 
-import com.google.common.collect.Maps;
-import com.qiqi.juint.test.model.User;
-import com.qiqi.juint.test.model.vo.ClientInfoDTO;
-import com.qiqi.juint.test.service.RedisService;
-import org.junit.Test;
+import com.qiqi.testRedis.service.RedisService;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import redis.clients.jedis.JedisCluster;
-
-import java.util.Map;
 
 /**
  * Created by ZhaoQiqi on 2018/11/8.

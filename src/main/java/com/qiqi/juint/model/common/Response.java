@@ -1,4 +1,4 @@
-package com.qiqi.juint.test.model.common;
+package com.qiqi.juint.model.common;
 
 import lombok.Data;
 

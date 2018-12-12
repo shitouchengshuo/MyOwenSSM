@@ -1,7 +1,6 @@
 package com.qiqi.testJava8;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import com.qiqi.testJava8.model.User;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

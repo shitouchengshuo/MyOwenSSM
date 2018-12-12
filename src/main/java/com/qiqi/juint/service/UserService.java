@@ -1,7 +1,7 @@
-package com.qiqi.juint.test.service;
+package com.qiqi.juint.service;
 
-import com.qiqi.juint.test.model.User;
-import com.qiqi.juint.test.model.vo.UserVO;
+import com.qiqi.juint.model.User;
+import com.qiqi.juint.model.vo.UserVO;
 
 import java.util.List;
 

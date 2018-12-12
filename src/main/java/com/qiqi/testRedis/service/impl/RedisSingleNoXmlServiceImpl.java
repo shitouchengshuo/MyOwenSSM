@@ -1,4 +1,4 @@
-package com.qiqi.juint.test.service.impl;
+package com.qiqi.testRedis.service.impl;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;

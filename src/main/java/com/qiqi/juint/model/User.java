@@ -1,7 +1,6 @@
-package com.qiqi.juint.test.model;
+package com.qiqi.juint.model;
 
 import lombok.Data;
-import org.springframework.context.annotation.Bean;
 
 import java.io.Serializable;
 

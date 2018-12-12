@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 /**
  * Created by ZhaoQiqi on 2018/11/10.
  */
-public class a {
+public class Java8Test {
     //自定义一个test方法
     public static void test(int value, Consumer<Integer> consumer) {
         consumer.accept(value);

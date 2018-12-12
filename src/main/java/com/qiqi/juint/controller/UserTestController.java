@@ -1,7 +1,7 @@
-package com.qiqi.juint.test;
+package com.qiqi.juint.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.qiqi.juint.test.model.User;
+import com.qiqi.juint.model.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,10 +27,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @WebAppConfiguration //声明一个ApplicationContext集成测试加载WebApplicationContext，作用是模拟ServletContext
 @ContextConfiguration(locations={"classpath:spring/spring-application.xml"})
 
-//配置事务的回滚,对数据库的增删改都会回滚,便于测试用例的循环利用
+//配置事务,对数据库的增删改都会回滚,便于测试用例的循环利用
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
-public class UserControllerTest {
+public class UserTestController {
 
     @Autowired
     private WebApplicationContext wac;
@@ -54,7 +54,7 @@ public class UserControllerTest {
 
     @Test
     public void testInsertUser() throws Exception {
-        User user = new User(15,"哈哈");
+        User user = new User(77,"萌萌");
         String requestJson = JSONObject.toJSONString(user);
         System.out.println(requestJson);
         MvcResult mvResult = mockMvc.perform(
