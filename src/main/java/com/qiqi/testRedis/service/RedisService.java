@@ -5,5 +5,5 @@ package com.qiqi.testRedis.service;
  */
 public interface RedisService {
 
-//    void testRedis();
+    void testRedis();
 }

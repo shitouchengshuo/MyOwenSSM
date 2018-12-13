@@ -14,7 +14,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration //声明一个ApplicationContext集成测试加载WebApplicationContext，作用是模拟ServletContext
 @ContextConfiguration(locations={"classpath:spring/spring-application.xml"})

@@ -1,11 +1,16 @@
 package com.qiqi.testRedis.service.impl;
 
 import com.qiqi.testRedis.service.RedisService;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import redis.clients.jedis.JedisCluster;
+
+import java.util.logging.Logger;
 
 /**
  * Created by ZhaoQiqi on 2018/11/8.
@@ -17,18 +22,18 @@ import org.springframework.test.context.web.WebAppConfiguration;
 public class RedisServiceImpl implements RedisService {
 
     //private static final Logger logger = Logger.getLogger(RedisServiceImpl.class);
-//
-//    @Autowired
-//    private JedisCluster jedisCluster;
-//
-//    @Test
-//    public void testRedis( ) {
-//        jedisCluster.set("1","哈哈");
-//        System.out.println(jedisCluster.get("1"));
-////        Map<String,String> map = Maps.newHashMap();
-////        map.put("1",new User(1,"").toString());
-////        jedisCluster.hmset("1",new ClientInfoDTO());
-//        //10秒后让缓存失效
-//        jedisCluster.expire("1",10000);
-//    }
+
+    @Autowired
+    private JedisCluster jedisCluster;
+
+    @Test
+    public void testRedis( ) {
+        jedisCluster.set("1","哈哈");
+        System.out.println(jedisCluster.get("1"));
+//        Map<String,String> map = Maps.newHashMap();
+//        map.put("1",new User(1,"").toString());
+//        jedisCluster.hmset("1",new ClientInfoDTO());
+        //10秒后让缓存失效
+        jedisCluster.expire("1",10000);
+    }
 }

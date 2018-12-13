@@ -9,17 +9,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by ZhaoQiqi on 2018/11/8.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:spring/spring-application.xml"})
-@Transactional
+@Transactional  //在junit测试时，@Transactional注解默认不提交事务，即默认回滚事务，防止污染数据库
+@Rollback(false)//关闭回滚
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -29,38 +31,23 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     public List<UserVO> getUserInfo(Integer age) {
-
-        logger.info("+++++++++调用方法getUserInfo(Integer age)+++++++++++++");
+        logger.info("调用方法getUserInfo(Integer age)");
         return userMapper.getUserInfo(age);
     }
 
-    public void insertUser(User user) {
+
+    public void insertUser(User user)throws Exception {
         userMapper.inserUser(user);
+        //throw new RuntimeException();
+        //throw new IOException();
     }
 
     @Test
-    public void test(){
+    public void test() throws Exception {
+        logger.info("调用insert(User user)方法");
+        insertUser(new User(11, "么么"));
 
-        boolean exist = userMapper.exist(12);
-        logger.error("+++++++++调用方法userMapper.exist+++++++++++++");
-        System.out.println("exist:  "+exist);
-
-        int userNumbers = userMapper.getUserNumbers(12);
-        System.out.println("userNumbers: "+userNumbers);
-
-        List<UserVO> list = userMapper.getUserInfo(12);
-        list.forEach(user-> System.out.println(user));
-
-        boolean existAge100 = userMapper.exist(100);
-        System.out.println("existAge100:  "+existAge100);
-    }
-
-    public static void main(String[] args) {
-        logger.error("+++++++++调用方法userMapper.exist+++++++++++++");
-        System.out.println("exist:  ");
-
-        System.out.println("userNumbers: ");
-
-
+        boolean exist = userMapper.exist(11);
+        System.out.println("exist:  " + exist);
     }
 }

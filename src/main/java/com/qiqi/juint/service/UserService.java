@@ -12,5 +12,5 @@ public interface UserService {
 
     List<UserVO> getUserInfo(Integer age);
 
-    void insertUser(User user);
+    void insertUser(User user) throws Exception;
 }
