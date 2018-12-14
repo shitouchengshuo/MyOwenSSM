@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Created by ZhaoQiqi on 2018/11/8.
+ * 1、用于juint测试web
+ * 2、用于进行spring事务回滚的测试
  */
 
 @Controller
@@ -25,14 +26,15 @@ public class UserController {
         return "test";
     }
 
-    @RequestMapping(value = "getUser",method = RequestMethod.GET)
-    @ResponseBody
-    public List<UserVO> getUserInfo(@RequestParam Integer age){
-        return userService.getUserInfo(age);
-    }
+//    @RequestMapping(value = "getUser",method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<UserVO> getUserInfo(@RequestParam Integer age){
+//        return userService.getUserInfo(age);
+//    }
 
     @RequestMapping(value = "insertUser", method = RequestMethod.POST)
-    public void insertUser(@RequestBody User user){
-        //userService.insertUser(user);
+    public void insertUser(@RequestBody User user)throws Exception{
+        userService.insertUser(user);
+
     }
 }
