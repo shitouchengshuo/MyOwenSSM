@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
-@Transactional//(rollbackFor = IOException.class ,propagation = Propagation.SUPPORTS)
+//@Transactional//(rollbackFor = IOException.class ,propagation = Propagation.SUPPORTS)
 @Service
 public class UserServiceTestTransactionImpl {
 

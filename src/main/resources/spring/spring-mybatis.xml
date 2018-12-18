@@ -10,15 +10,10 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
-    <!-- 扫描service包下所有使用注解的类型 -->
-    <context:component-scan base-package="com.qiqi.juint.service"/>
-
     <!-- 数据库连接池 -->
     <bean id="localdataSource" class="com.alibaba.druid.pool.DruidDataSource"
           destroy-method="close" init-method="init" lazy-init="true">
-        <description>只读数据库连接</description>
-        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
@@ -49,34 +44,19 @@
         <property name="defaultAutoCommit" value="${druid.defaultAutoCommit}" />
         <!-- 配置监控统计用的扩展插件filter:stat  -->
         <property name="filters" value="${druid.filters}" />
-        <!--与filters是组合关系，这里是配置日志插件
-        <property name="proxyFilters">
-            <list>
-                <ref bean="logFilter" />
-            </list>
-        </property>
-        -->
     </bean>
-    <!--配置日志插件
-    <bean id="logFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter">
-        <property name="statementExecutableSqlLogEnable" value="false" />
-    </bean>
-     -->
-
 
     <!-- 配置SqlSessionFactory对象 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-
         <!-- 注入数据库连接池-->
         <property name="dataSource" ref="localdataSource"/>
         <!-- 设置这个以后再Mapper配置文件中在parameterType的值就不用写成全路径名了 -->
         <property name="typeAliasesPackage" value="com.qiqi.juint.model"/>
         <!-- 扫描sql配置文件:mapper需要的xml文件-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-
     </bean>
 
-    <!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
+    <!-- mybatis配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>

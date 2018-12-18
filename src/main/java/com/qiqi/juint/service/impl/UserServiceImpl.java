@@ -20,7 +20,7 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:spring/spring-application.xml"})
-@Transactional()
+//@Transactional()
 //@Rollback(false)//用于单元测试时关闭回滚
 @Service
 public class UserServiceImpl implements UserService {
