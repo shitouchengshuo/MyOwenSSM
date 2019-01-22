@@ -36,9 +36,9 @@ public class ComparatorTest {
         //4. Java8,Lambda表达式，多条件排序
         userList.sort((user1, user2) -> {
             if (user1.getName().equals(user2.getName())) {
-            return user1.getAge() - user2.getAge();
+                 return user1.getAge() - user2.getAge();
             } else {
-            return user1.getName().compareTo(user2.getName());
+                 return user1.getName().compareTo(user2.getName());
             }
         });
 
